@@ -17,11 +17,14 @@ end
 def mirp
   abfrage
   clear
-  @zahl = @zahl.to_s.reverse.to_i
-  if @zahl.prime? == true
-    puts "#{@zahl} ist eine mirpzahlenzahl"
+  if @zahl < 10
+    puts "Eine Mirpzahl benötigt mindestens 2 ziffern"
+    zurück
+  end
+  if @zahl.prime? == true && @zahl.to_s.reverse.to_i.prime? == true
+    puts "#{@zahl} bzw. #{@zahl.to_s.reverse} ist eine Mirpzahlenzahl"
   else
-    puts "#{@zahl} ist keine Mirpzahlzahl"
+    puts "#{@zahl} bzw. #{@zahl.to_s.reverse} ist keine Mirpzahlzahl"
   end
   zurück
 end
