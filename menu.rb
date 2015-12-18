@@ -2,7 +2,11 @@ require_relative "./prim.rb"
 
 def menu
   clear
-  puts "(P)rimzahl oder (M)irpzahl?"
+  puts "---\\Menü/---"
+  puts "p = Primzahl"
+  puts "m = Mirpzahl"
+  puts "e = Ende"
+  puts "------------"
   print "antwort: "
   auswahl = gets.chomp
   case auswahl
@@ -10,8 +14,9 @@ def menu
     prim
   when "m"
     mirp
+  when "e"
+    exit
   else
-    system "cls" or "clear"
     menu
   end
 end
@@ -25,4 +30,9 @@ end
 
 def clear
   system "cls" or "clear"
+end
+
+def zurück
+  gets
+  menu
 end

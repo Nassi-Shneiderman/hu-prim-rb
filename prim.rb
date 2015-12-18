@@ -1,6 +1,5 @@
 require_relative "./menu.rb"
 require "prime"
-require "io/console"
 
 def prim
   abfrage
@@ -9,16 +8,20 @@ def prim
     primzahlen = (1..@zahl).to_a
     @primzahlen = primzahlen.select{|each| each.prime? and each < @zahl }.to_s
     puts "#{@primzahlen.delete("[]")}, #{@zahl} sind Primzahlen"
-  end
-  case STDIN.getch
-  when ""
-    menu
   else
-    menu
+    puts "#{@zahl} ist keine Primzahl"
   end
+  zurück
 end
 
 def mirp
   abfrage
-
+  clear
+  @zahl = @zahl.to_s.reverse.to_i
+  if @zahl.prime? == true
+    puts "#{@zahl} ist eine mirpzahlenzahl"
+  else
+    puts "#{@zahl} ist keine Mirpzahlzahl"
+  end
+  zurück
 end
