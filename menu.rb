@@ -2,7 +2,7 @@ require_relative "./prim.rb"
 
 def menu
   clear
-  puts "---\\Menü/---"
+  puts "---|Menü|---"
   puts "p = Primzahl"
   puts "m = Mirpzahl"
   puts "e = Ende"
