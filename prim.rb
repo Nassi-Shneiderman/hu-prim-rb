@@ -7,8 +7,11 @@ def prim
   if @zahl.prime? == true
     primzahlen = (1..@zahl).to_a
     @primzahlen = primzahlen.select{|each| each.prime? and each < @zahl }.to_s
-    puts "#{@primzahlen.delete("[]")}, #{@zahl} sind Primzahlen"
+    puts "#{@primzahlen.delete("[]")}, [#{@zahl}] sind Primzahlen"
   else
+    primzahlen = (1..@zahl).to_a
+    @primzahlen = primzahlen.select{|each| each.prime? and each < @zahl }.to_s
+    puts @primzahlen.delete("[]")
     puts "#{@zahl} ist keine Primzahl"
   end
   zurück
